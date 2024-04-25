@@ -11,19 +11,22 @@ def list(request):
         'title':'Godfather',
         'year':1990,
         'summary':'story of an untold kin',
-        'sucess':True    
+        'sucess':True,
+        'img':'imgg2.png' 
         },
         {
         'title':'Titanic',
         'year':1990,
         'summary':'Love story',
-        'sucess':False    
+        'sucess':False,
+        'img':'imgg2.png'    
         },
         {
         'title':'Kingkong',
         'year':1990,
         'summary':'story of an ape',
-        'sucess':True 
+        'sucess':True,
+        'img':'imgg2.png' 
         }   
     ]}
     return render(request,'list.html',movie_data)
