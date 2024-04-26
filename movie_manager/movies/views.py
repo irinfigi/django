@@ -15,7 +15,12 @@ def create(request):
 def list(request):
     movie_set=MovieInfo.objects.all()
     print(movie_set)
-    return render(request,'list.html',{'movies':movie_set})
+    return render(request,'list.html',{'movies': movie_set})
 
-def edit(request):
+def edit(request,pk):
     return render(request,'edit.html')
+
+def delete(request,pk):
+    movie_set=MovieInfo.objects.all()
+    print(movie_set)
+    return render(request,'list.html',{'movies':movie_set})
