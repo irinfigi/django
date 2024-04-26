@@ -13,14 +13,15 @@ def create(request):
     return render(request,'create.html',{'frm':frm})
 
 def list(request):
-    movie_set=MovieInfo.objects.all()
-    print(movie_set)
-    return render(request,'list.html',{'movies': movie_set})
+    #movie_set=MovieInfo.objects.all()
+    #print(movie_set)
+    return render(request,'list.html',{'movies': MovieInfo.objects.all()})
 
 def edit(request,pk):
     return render(request,'edit.html')
 
 def delete(request,pk):
+    instance=MovieInfo.objects.get(pk=pk)
+    instance.delete()
     movie_set=MovieInfo.objects.all()
-    print(movie_set)
     return render(request,'list.html',{'movies':movie_set})

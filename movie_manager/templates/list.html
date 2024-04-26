@@ -11,7 +11,7 @@
 <td></td>
 <td><h1>{{movie_obj.description}}</h1></td>
 <td><h1></h1>{{movie_obj.year}}</h1></td>
-<td><a href="{% url 'edit' movie_obj.id %}">edit</a>/<a href="">delete</a></td>
+<td><a href="{% url 'edit' movie_obj.id %}">edit</a>/<a href="{% url 'delete' movie_obj.id %}">delete</a></td>
 </tr>
 {% endfor %}
 </table>
