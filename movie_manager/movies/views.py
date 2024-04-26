@@ -18,7 +18,15 @@ def list(request):
     return render(request,'list.html',{'movies': MovieInfo.objects.all()})
 
 def edit(request,pk):
-    return render(request,'edit.html')
+    instance_to_be_edited=MovieInfo.objects.get(pk=pk)
+    if request.POST:
+        frm=MovieForm(request.POST,instance=instance_to_be_edited)
+        if frm.is_valid():
+            instance_to_be_edited.save()
+    else:
+        frm=MovieForm(instance=instance_to_be_edited)
+    return render(request,'create.html',{'frm':frm})
+    
 
 def delete(request,pk):
     instance=MovieInfo.objects.get(pk=pk)
