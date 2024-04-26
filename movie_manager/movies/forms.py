@@ -4,3 +4,4 @@ class MovieForm(ModelForm):
     class Meta:
        model=MovieInfo
        fields='__all__'
+       
